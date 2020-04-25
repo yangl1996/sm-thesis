@@ -1,0 +1,66 @@
+\section{Confirmation Rule}
+\label{apx:confirmation}
+
+In this section we give the detailed calculation of the confidence intervals of the votes a proposer block receives. It is used when confirming a leader proposer block, as mentioned in Section~\ref{sec:confirmation}.
+
+Consider the scenario where there are $n$ proposer blocks at level $l$, and let $\mathcal P =\{B^P_1, B^P_2, \ldots, B^P_n\}$ denote the set of proposer blocks at level $l$. Now we want to count the number of votes each block will get with confidence $1-\epsilon$.
+
+Suppose $B^P_i$ gets $v_i$ votes. Here a vote stands for a voter block which is on the longest chain of its voter tree and votes for $B^P_i$. 
+Let $\mathcal V_i =\{B^V_{i_1}, B^V_{i_2}, \ldots, B^V_{i_{v_i}}\}$ denote the set of votes that $B^P_i$ has. For every vote $B^V_{i_j}$, let $d_{i_j}$ denote its depth, which is the number of blocks appended to voter block $B^V_{i_j}$ in the longest chain, plus one.
+
+Now, for each vote $B^V_{i_j}$ with depth $d_{i_j}$, we want to calculate the probability $P_{i_j}$ of it being permanent. 
+% \textit{not} being overtaken by a hypothetical, unreleased adversarial chain any time in the future. 
+To do so, we consider a potential private double-spend attack, assuming an adversarial party is trying to overturn the voting results to elect a different proposer block $B^P_A$ as the leader block of level $l$. 
+Note that $B^P_A$ could either be a block in $\mathcal P$, i.e. publicly known, or a block the adversary has privately mined but not released. 
+To elect $B^P_A$ as the leader block of level $l$, the adversarial party would need to mine its own voter chains to overturn some existing votes to vote for $B^P_A$. 
+
+We want to compute the probability of this happening.
+% we need to reason about the blocks the adversary has already mined as well as those it will mine in the future. 
+However, we do not know when the adversary started mining voter blocks for $B^P_A$.
+% , which means we do not know how long the adversary could have been mining its private blocks. 
+% However, from the visible state of the blockchain, we can estimate when $B^P_i$ was mined; assuming $B^P_A$ was mined at least as late as $B^P_i$, this gives us a bound. 
+Notice that the adversary has no incentive to mine voter blocks for $B^P_A$ until $B^P_i$ has been mined and released. 
+Since the honest nodes are always releasing blocks, we can use the average depth of the votes for $B^P_i$ in the public voter trees to estimate the time passed since $B^P_i$ was released, hence  bounding the expected number of votes the adversary could have accumulated on their private fork in the same amount of time. 
+That is, since block inter-arrivals are exponentially distributed, the number of blocks mined since block $B^P_i$ was proposed is a Poisson random variable, with rate equal to its mean. 
+This quantity can be related to the time elapsed since $B^P_i$ was released via the block mining rate.
+% To do this, we estimating how deep those private voter chains are on average. 
+
+More precisely, as an honest node, we assume the fraction of adversarial hashing power is $\beta$, and we can empirically estimate the average depth of existing public votes as $\bar{d}=\sum_{ij}{d_{i_j}}/\sum_{i}{v_i}$ and the forking rate $\alpha$~\footnote{The fraction of blocks not on the longest chain out of all blocks.} of public voter chains. 
+Since there are many voter chains, these estimates converge quickly to their true means. 
+Then, we calculate the estimated average depth of a \emph{private} voter chain, denoted as $\bar{d_A}$, to be
+% \gf{Yes, the sentences starting with "we observe that" to the end of this para  (through the following equations) need a good bit more explanation. Minor nits: In the defn of $\bar{d}$, $v_i$ was earlier defined as the total number of votes, not the honest number  of votes,
+% but $\bar{d}$ is defined as the average depth of honest votes. How are you defining an "honest vote" here? 
+% Also, the sentence starting with "We observe" doesn't parse.}
+% \ly{``honest'' is better defined as ``public'' here, and I have changed the definitions correspondingly. Also, I added the sentence below the next equation. Does this sound like enough explanantion?}
+$$\bar{d_A} = \frac{\beta \bar{d}}{(1-\alpha)(1-\beta)}.$$
+Here the $1/(1-\alpha)$ term accounts for forking in public voter chains and assumes that the malicious private voter chains do not fork. The $\beta / (1-\beta)$ term accounts for the ratio of hashing power between the honest users ($1-\beta$) and the malicious users ($\beta$).
+This expected depth $\bar{d_A}$ can be used as an estimate of the rate of the Poisson random variable of the number of blocks in the adversary's  private chain. 
+
+
+Since each voter chain follows the longest-chain rule, the calculation for $P_{i_j}$ is the same as in \bitcoin
+$$P_{i_j} = F_{\text{Pois}}(d_{i_j};\bar{d_A}) - \sum_{k=0}^{d_{i_j}}f_{\text{Pois}}(k;\bar{d_A})\frac{\beta}{1-\beta}^{d_{i_j} + 1 - k}.$$
+Here $F_{\text{Pois}}(x;\lambda)$ is the cumulative distribution function and $f_{\text{Pois}}(x;\lambda)$ is the probability mass function of Poisson distribution with rate parameter $\lambda$.
+In this expression, the first term is the probability that the adversary has mined fewer than $d_{i_j}+1$ blocks, in which case it cannot currently overtake the main chain. 
+The second term computes, for each possible length of the adversary's chain, the probability that the adversary overtakes the public voter chain in the future by mining faster. 
+
+Given $P_{i_j}$, we can now calculate the confidence interval of votes on each proposer block. For proposer block $B_i^P$ and each of its votes $B^V_{i_j}$, let $\tilde V_{i_j}$ be the random variable where
+$$\tilde V_{i_j} = \begin{cases}
+    1, & \text{if vote } B^V_{i_j} \text{ is secure forever (permanent)} \\
+    0, & \text{if vote } B^V_{i_j} \text{ will be overturned}
+  \end{cases}.$$
+With some abuse of notation, let $v_i$ be the random variable equal to the number of secure votes of $B^P_i$. We have
+$$v_i = \sum_{j}B^V_{i_j}.$$
+Note that $\tilde V_{i_j}\sim \text{Bernoulli}(P_{i_j})$. Then the lower confidence bound of votes on $B_i^P$ (denoted as $\left \lfloor v_{i} \right \rfloor$) can be obtained by calculating in $\epsilon$-quantile of random variable $v_i$.
+
+In real-world implementations, given the complexity of such computation, its closed-form approximation may be used. We can approximate $v_i$ using a Gaussian distribution $\mathcal N(\mu_i, \sigma_i^2)$ where
+$$\mu_i=\sum_j P_{i_j}.$$
+$$\sigma_i^2 = \sum_j P_{i_j}(1-P_{i_j}).$$
+Using the closed-form approximation of the quantile function of normal distribution, we have
+$$\left \lfloor v_{i} \right \rfloor \approx \mu_i - \sigma_i \sqrt{\ln{
+\frac{1}{\epsilon^2}} - \ln{\ln{\frac{1}{\epsilon^2}}} - \ln{(2\pi)}}.$$
+
+Now, we consider the upper confidence bound of votes on $B_i^P$ (denoted as $\left \lceil v_{i} \right \rceil$). Here, we want to defend against the worst case where for each $B_i^P$, only $\left \lfloor v_{i} \right \rfloor$ votes are retained, and the adversarial party controls the remaining votes (we let $\left \lceil v_A \right \rceil$ denote the number of such votes). Recall that each voter chain can only vote for each proposer level once. For a system with $m$ voter chains, we have
+$$\left \lceil v_A \right \rceil = m - \sum_{i}\left \lfloor v_{i} \right \rfloor.$$
+The adversarial party will use those votes to vote for $B^P_A$. Since $B^P_A$ could be any block in $\mathcal P$, we have
+$$\left \lceil v_i \right \rceil = \left \lfloor v_{i} \right \rfloor + \left \lceil v_A \right \rceil.$$
+$B^P_A$ could also be a block which the adversarial party mines but has not released. In such case, the upper bound of votes on $B^P_A$ is just $\left \lceil v_A \right \rceil$. Finally, to select the leader of level $l$, we search for the block $B^P_L \in \mathcal P$ satisfying $\left \lfloor v_{L} \right \rfloor > \left \lceil v_i \right \rceil$ for every $i \neq L$ and $\left \lfloor v_{L} \right \rfloor > \left \lceil v_A \right \rceil$. In words, we select the block whose lower bound of votes is higher than the upper bound of any other known or unknown proposer block in the same level.

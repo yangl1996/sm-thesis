@@ -1,0 +1,80 @@
+\tikzstyle{proposer} = [draw, fill=blue!20, rectangle, rounded corners, minimum height=1em, minimum width=1.6em, text centered]
+\tikzstyle{voter} = [draw, fill=green!20, rectangle, rounded corners, minimum height=1em, minimum width=1.6em]
+\tikzstyle{transaction} = [draw, circle, fill=yellow!20]
+
+% The block diagram code is probably more verbose than necessary
+\begin{tikzpicture}[auto, node distance=0.8cm,>=latex']
+\node [proposer] (p0l) {\tiny L};
+\node [proposer, below of=p0l] (p1l) {\tiny L};
+\node [proposer, left=0.1cm of p1l] (p1s) {};
+\node [proposer, below of=p1l] (p2l) {\tiny L};
+\node [proposer, right=0.1cm of p2l] (p2s) {};
+\node [proposer, below of=p2l] (p3l) {\tiny L};
+
+\node[transaction, above left = 0.01cm and 0.45cm of p0l] (t00){};
+\node[transaction, below right = 0.06cm and 0.02cm of t00] (t01){};
+\node[transaction, left = 0.25cm of p1s] (t10){};
+\node[transaction, above right = 0.07cm and 0.02cm of t10] (t11){};
+\node[transaction, below right = 0.10cm and 0.07cm of t10] (t12){};
+\node[transaction, below left = 0.05cm and 0.25cm of p2l] (t20){};
+\node[transaction, above left = 0.07cm and 0.13cm of t20] (t21){};
+\node[transaction, left = 0.35cm of p3l] (t30){};
+\node[transaction, above left = 0.05cm and 0.11cm of t30] (t31){};
+\node[transaction, left = 0.25cm of t30] (t32){};
+\draw[densely dashed, <-] (t00)  to [looseness=0.4] (p0l);
+\draw[densely dashed, <-] (t01)  to [looseness=0.4] (p0l);
+\draw[densely dashed, <-] (t10)  to [looseness=0.4] (p1l);
+\draw[densely dashed, <-] (t11)  to [looseness=0.4] (p1l);
+\draw[densely dashed, <-] (t12)  to [looseness=0.4] (p1l);
+\draw[densely dashed, <-] (t20)  to [looseness=0.4] (p2l);
+\draw[densely dashed, <-] (t21)  to [looseness=0.4] (p2l);
+\draw[densely dashed, <-] (t30)  to [looseness=0.4] (p3l);
+\draw[densely dashed, <-] (t31)  to [looseness=0.4] (p3l);
+\draw[densely dashed, <-] (t32)  to [looseness=0.4] (p3l);
+
+
+\node [voter, right=1cm of p0l] (v00) {};
+\node [voter, below of=v00] (v01) {};
+\node [voter, below of=v01] (v02) {};
+\node [voter, below of=v02] (v03) {};
+\draw[<-] (v00) to (v01);
+\draw[<-] (v01) to (v02);
+\draw[<-] (v02) to (v03);
+
+\node [voter, right=0.3cm of v00] (v10) {};
+\node [voter, below of=v10] (v11) {};
+\node [voter, below of=v11] (v12) {};
+\node [voter, below of=v12] (v13) {};
+\draw[<-] (v10) to (v11);
+\draw[<-] (v11) to (v12);
+\draw[<-] (v12) to (v13);
+
+\node [right=0.3cm of v10] (space0) {$\cdots$};
+\node [below of=space0] (space1) {$\cdots$};
+\node [below of=space1] (space2) {$\cdots$};
+\node [below of=space2] (space3) {$\cdots$};
+
+\node [voter, right=0.3cm of space0] (v20) {};
+\node [voter, below of=v20] (v21) {};
+\node [voter, below of=v21] (v22) {};
+\node [voter, below of=v22] (v23) {};
+\draw[<-] (v20) to (v21);
+\draw[<-] (v21) to (v22);
+\draw[<-] (v22) to (v23);
+
+\draw[densely dashed, <-] (p0l)  to [looseness=0.3] (v00);
+\draw[densely dashed, <-] (p1l)  to [looseness=0.3] (v01);
+\draw[densely dashed, <-] (p2l)  to [looseness=0.3] (v02);
+\draw[densely dashed, <-] (p3l)  to [looseness=0.3] (v03);
+
+\draw[densely dashed, <-] (p0l)  to [looseness=0.3] (v10);
+\draw[densely dashed, <-] (p1l)  to [looseness=0.3] (v11);
+\draw[densely dashed, <-] (p2l)  to [looseness=0.3] (v12);
+\draw[densely dashed, <-] (p3l)  to [looseness=0.3] (v13);
+
+\draw[densely dashed, <-] (p0l)  to [looseness=0.3] (v20);
+\draw[densely dashed, <-] (p1l)  to [looseness=0.3] (v21);
+\draw[densely dashed, <-] (p2l)  to [looseness=0.3] (v22);
+\draw[densely dashed, <-] (p3l)  to [looseness=0.3] (v23);
+
+\end{tikzpicture}

@@ -1,0 +1,58 @@
+\section{Related Work}
+\label{sec:related}
+There are broadly three different approaches to scale the performance of blockchains. First, \textit{on-chain scaling} aims to design consensus protocols with inherently high throughput and low  latency. Protocols such as Bitcoin-NG~\cite{bitcoin-ng}, GHOST~\cite{ghost}, Algorand~\cite{algorand}, OHIE~\cite{ohie} are examples of this approach. 
+Second, in \textit{off-chain scaling}, users establish cryptographically-locked agreements called ``payment channels''~\cite{payment-channel} and send most of the transactions off-chain on those channels. 
+Lightning~\cite{lightning} and Eltoo~\cite{decker2018eltoo} are examples of this approach. 
+Third, \textit{sharding} approaches conceptually maintain multiple ``slow'' blockchains that achieve high performance in aggregate. Omniledger~\cite{kokoris2018omniledger}, Ethereum 2.0~\cite{buterin2016ethereum}, and Monoxide~\cite{monoxide} are examples of this approach. 
+These three approaches are orthogonal and can be combined to aggregate their individual performance gains. 
+% We also point out that off-chain techniques and sharding are relatively new ideas, and they have not been tested out in the wild like on-chain transactions. 
+
+\if 0
+Off-chain solutions offer lower security compared to on-chain solutions; an adversary can open payment channels with many users and simultaneously try to settle old channel balance splits
+on the main chain. Because of low throughput on the main chain, only a fraction of these users will be able to defend against this attack by settling their latest channel balance on the main chain.
+\gf{what kind of attack do you mean? I don't follow how the attack works.} \vb{I have modified it}
+% This can cause a huge loss of funds and trust.
+It also requires all the users to be online; if a user goes offline, the channel's other user might settle an old channel balance split.
+% going offline for a duration can lead to loss in funds as the  
+\pv{Would be good to provide some citations for the statements in this para.}
+% Nevertheless, off-chain scaling and sharding techniques introduce new attack vectors and has performance issues in certain types of usage.
+Off-chain and sharding transactions are relatively new ideas and they have not been tested out in the wild like on-chain transactions. \ma{I don't think we need to delve into detailed attacks on off-chain solutions. I think you can just say the last sentence: Off-chain and sharding are relatively new.... at the end of the last paragraph, and focus on on-chain in the rest}
+%On-chain scaling solutions do not have those problems.
+\fi
+
+Since Prism is an on-chain scaling solution, we compare it with other on-chain solutions. 
+We explicitly exclude protocols with different trust and security assumptions, like   Tendermint~\cite{kwon2014tendermint},  HotStuff~\cite{yin2019hotstuff}, HoneyBadgerBFT~\cite{miller2016honey}, SBFT~\cite{gueta1804sbft}, Stellar~\cite{stellarsystem}, and Ripple\cite{cachin2017blockchain}, which require clients to pre-configure a set of trusted nodes. 
+These protocols target ``permissioned'' settings, and they generally scale to significantly fewer number of nodes than the above mentioned permisionless protocols.
+%;  hence we don't directly compared them with \prism.
+
+%\ly{Apart from the permissionless blockchain protocols mentioned above, another class of protocols target the ``permissioned'' settings where the set of nodes participating in the consensus is always fixed. Protocols such as Tendermint~\cite{kwon2014tendermint},  HotStuff~\cite{yin2019hotstuff}, HoneyBadgerBFT~\cite{miller2016honey}, SBFT~\cite{gueta1804sbft} etc fall into this category. We point out that those protocols target different applications and they scale to significantly to a fewer number of nodes than the above mentioned permisionless protocols,  hence we don't directly compared them with \prism.}
+%Stellar~\cite{stellarsystem} and Ripple\cite{cachin2017blockchain}, which require clients to pre-configure a set of trusted nodes..
+
+
+% Those protocols target goals different from a public blockchain like \prism.}
+Among protocols with similar security assumptions to ours,  Bitcoin-NG~\cite{bitcoin-ng}  mines blocks  at a low rate similar to the longest chain protocol. In addition, each block's miner continuously adds transactions to the ledger until the next block is mined. This utilizes the capacity of the network between the infrequent mining events, thereby improving throughput, but latency remains the same as that of the longest-chain protocol. Furthermore,  an adversary that adaptively corrupts miners can reduce its throughput to that of the longest chain protocol by censoring the addition of transactions~\cite{parallel}. \prism adopts the idea of decoupling the addition of transactions from the election into the main chain but avoids this adaptive attack. We compare to \bng in \S\ref{sec:eval-performance}.
+%We were not able to find an implementation of Bitcoin-NG for use in our experiments.
+%\ma{isn't it actually implemented in some projects? be careful about this one; there are 3 cornel profs on pc, and they will know about bitcoin-ng and could talk to Gun Sirer too}
+%\ly{bitcoin-ng is implemented (see https://blog.aeternity.com/introduction-to-æternitys-bitcoin-ng-implementation-331d0a1393b4).}
+
+DAG-based solutions like GHOST~\cite{ghost}, Inclusive~\cite{inclusive}, and Conflux~\cite{conflux} were designed to operate at high mining rates, and their blocks form a directed acyclic graph (DAG). 
+However, these protocols were later shown to be insecure because they don't guarantee liveness, i.e. the ledger stops to grow, under certain balancing attacks \cite{ghost_attack}. Spectre\cite{spectre} and Phantom \cite{phantom} protocols were built along the ideas in GHOST and Inclusive to defend against the balancing attack, however, they don't provide any formal guarantees. Also, Spectre doesn't give a total ordering and
+Phantom has a liveness attack \cite{conflux}.
+To the best of our knowledge, the GHOST, Inclusive, Spectre and Phantom protocols have no publicly available implementation, and hence we were not able to compare these protocols with \prism in our performance evaluation. 
+
+The blockchain structure maintained by \prism is also a DAG, but a structured one with a clear separation of blocks into different types with different functionalities (Figure \ref{fig:prism}). 
+OHIE~\cite{ohie} and Parallel Chains~\cite{parallel} build on these lessons by running many slow, secure longest chains in parallel, which gives high aggregate throughput at the same latency as the longest-chain protocol. To our knowledge, Parallel Chains has not been implemented. 
+In OHIE's latest implementation~\cite{ohiecode}, clients do not maintain the UTXO state of the blockchain and  transactions are signed messages without any context, so it is hard to compare with OHIE in our experiments, where all nodes maintain the full UTXO state.
+
+Algorand~\cite{algorand} takes a different approach by adopting a proof of stake consensus protocol and tuning various parameters to maximize the performance. We compare to Algorand in \S\ref{sec:eval-performance}. Importantly, none of the above protocols simultaneously achieve both high throughput and low latency. 
+Their reported throughputs are all lower than \prism's, and their latencies are all higher than \prism's, except for Algorand which has a lower latency.
+
+
+
+%%\ma{Should we mention Avalanche?}
+%%\vb{Yes. They also claim high throughput and low latency. Currently their protocol is not fully specified in the paper and no implementation available} \ly{one available with only the consensus layer}
+
+%%\ly{TODO: talk about stellar, read algorand's description}
+
+%\ma{One general comment is give credit (generously) if there's an idea in related work that inspired something in prism.}
+%\vb{We are inspired by all the DAG approaches. We took the idea of a) changing the main chain rule from GHOST, b) `referencing` blocks from Inclusive, and c) ledger sanitization  from Conflux.}

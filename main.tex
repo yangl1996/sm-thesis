@@ -33,6 +33,53 @@
 \usepackage[T1]{fontenc}
 \pagestyle{plain}
 
+\hyphenation{block-chain}
+\hyphenation{Block-chain}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+%\usepackage[]{algorithm2e}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{multirow}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{xcolor}
+\definecolor{azure}{rgb}{0.54, 0.17, 0.89}
+\usepackage{graphicx} 
+\usepackage{subcaption}
+\usepackage{tabularx}
+%\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{nicefrac}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+
+\usepackage{color}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\definecolor{darkred}{rgb}{0.7,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\newcommand{\av}[1]{$#1$}
+\newcommand{\colorcomment}[1]{\Comment{ {\color{azure} #1}} }
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\bitcoin}{Bitcoin\xspace}
+\newcommand{\bng}{Bitcoin-NG\xspace}
+\newcommand{\prism}{Prism\xspace}
+\newcommand{\algorand}{Algorand\xspace}
+\newcommand{\ethereum}{Ethereum\xspace}
+\newcommand{\maincolorcomment}[1]{{\color{azure}// #1 } }
+\microtypecontext{spacing=nonfrench}
+
 %% This bit allows you to either specify only the files which you wish to
 %% process, or `all' to process all files which you \include.
 %% Krishna Sethuraman (1990).
@@ -51,11 +98,19 @@ process all files:}
 % \include{signature}
 \pagestyle{plain}
 \include{contents}
-\include{chap1}
-\include{chap2}
+
+\include{intro}
+\include{related}
+\include{background}
+\include{overview}
+\include{design}
+\include{implementation}
+\include{eval}
+\include{conclusion}
 \appendix
-\include{appa}
-\include{appb}
+\include{confirmation-rule}
+\include{datapoints}
+\include{propagation}
 \include{biblio}
 \end{document}
 
