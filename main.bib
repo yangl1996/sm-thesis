@@ -1,356 +1,767 @@
-@preamble{ "\newcommand{\noopsort}[1]{} "
-	# "\newcommand{\printfirst}[2]{#1} "
-	# "\newcommand{\singleletter}[1]{#1} "
-	# "\newcommand{\switchargs}[2]{#2#1} " }
-
-@ARTICLE{article-minimal,
-   author = {L[eslie] A. Aamport},
-   title = {The Gnats and Gnus Document Preparation System},
-   journal = {\mbox{G-Animal's} Journal},
-   year = 1986,
+@inproceedings{merkle,
+  title={A digital signature based on a conventional encryption function},
+  author={Merkle, Ralph C},
+  booktitle={Conference on the theory and application of cryptographic techniques},
+  pages={369--378},
+  year={1987},
+  organization={Springer}
 }
 
-@ARTICLE{article-full,
-   author = {L[eslie] A. Aamport},
-   title = {The Gnats and Gnus Document Preparation System},
-   journal = {\mbox{G-Animal's} Journal},
-   year = 1986,
-   volume = 41,
-   number = 7,
-   pages = "73+",
-   month = jul,
-   note = "This is a full ARTICLE entry",
+@article{ohie,
+  author    = {Haifeng Yu and
+               Ivica Nikolic and
+               Ruomu Hou and
+               Prateek Saxena},
+  title     = {{OHIE:} Blockchain Scaling Made Simple},
+  journal   = {CoRR},
+  volume    = {abs/1811.12628},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1811.12628},
+  archivePrefix = {arXiv},
+  eprint    = {1811.12628},
+  timestamp = {Mon, 03 Dec 2018 07:50:28 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1811-12628},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-The KEY field is here to override the KEY field in the journal being
-cross referenced (so is the NOTE field, in addition to its imparting
-information).
-
-@ARTICLE{article-crossref,
-   crossref = {WHOLE-JOURNAL},
-   key = "",
-   author = {L[eslie] A. Aamport},
-   title = {The Gnats and Gnus Document Preparation System},
-   pages = "73+",
-   note = "This is a cross-referencing ARTICLE entry",
+@inproceedings{stellarsystem,
+  title={Fast and secure global payments with Stellar},
+  author={Lokhava, Marta and Losa, Giuliano and Mazi\'{e}res, David and Hoare, Graydon and  Barry, Nicolas and Gafni, Eli and Jove, Jonathan and Malinowsky, Rafał and McCaleb, Jed},
+  booktitle={Proceedings of the 27th Symposium on Operating Systems Principles},
+  year={2019},
+  organization={ACM}
 }
 
-@ARTICLE{whole-journal,
-   key = "GAJ",
-   journal = {\mbox{G-Animal's} Journal},
-   year = 1986,
-   volume = 41,
-   number = 7,
-   month = jul,
-   note = {The entire issue is devoted to gnats and gnus
-		(this entry is a cross-referenced ARTICLE (journal))},
+@misc{pingmeasurement,
+    title={Global Ping Statistics},
+    url={https://wondernetwork.com/pings/},
+    howpublished={https://wondernetwork.com/pings/},
 }
 
-@INBOOK{inbook-minimal,
-   author = "Donald E. Knuth",
-   title = "Fundamental Algorithms",
-   publisher = "Addison-Wesley",
-   year = "{\noopsort{1973b}}1973",
-   chapter = "1.2",
+@inproceedings{algorand,
+  author    = {Yossi Gilad and
+               Rotem Hemo and
+               Silvio Micali and
+               Georgios Vlachos and
+               Nickolai Zeldovich},
+  title     = {Algorand: Scaling Byzantine Agreements for Cryptocurrencies},
+  booktitle = {Proceedings of the 26th Symposium on Operating Systems Principles,
+               Shanghai, China, October 28-31, 2017},
+  pages     = {51--68},
+  year      = {2017},
+  crossref  = {sosp2017},
+  url       = {https://doi.org/10.1145/3132747.3132757},
+  doi       = {10.1145/3132747.3132757},
+  timestamp = {Tue, 06 Nov 2018 16:59:32 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sosp/GiladHMVZ17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-@INBOOK{inbook-full,
-   author = "Donald E. Knuth",
-   title = "Fundamental Algorithms",
-   volume = 1,
-   series = "The Art of Computer Programming",
-   publisher = "Addison-Wesley",
-   address = "Reading, Massachusetts",
-   edition = "Second",
-   month = "10~" # jan,
-   year = "{\noopsort{1973b}}1973",
-   type = "Section",
-   chapter = "1.2",
-   pages = "10--119",
-   note = "This is a full INBOOK entry",
+@article{cachin2017blockchain,
+  title={Blockchain consensus protocols in the wild},
+  author={Cachin, Christian and Vukoli{\'c}, Marko},
+  journal={arXiv preprint arXiv:1707.01873},
+  year={2017}
 }
 
-@INBOOK{inbook-crossref,
-   crossref = "whole-set",
-   title = "Fundamental Algorithms",
-   volume = 1,
-   series = "The Art of Computer Programming",
-   edition = "Second",
-   year = "{\noopsort{1973b}}1973",
-   type = "Section",
-   chapter = "1.2",
-   note = "This is a cross-referencing INBOOK entry",
+@proceedings{sosp2017,
+  title     = {Proceedings of the 26th Symposium on Operating Systems Principles,
+               Shanghai, China, October 28-31, 2017},
+  publisher = {{ACM}},
+  year      = {2017},
+  url       = {http://dl.acm.org/citation.cfm?id=3132747},
+  isbn      = {978-1-4503-5085-3},
+  timestamp = {Thu, 19 Oct 2017 21:45:40 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/sosp/2017},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-@BOOK{book-minimal,
-   author = "Donald E. Knuth",
-   title = "Seminumerical Algorithms",
-   publisher = "Addison-Wesley",
-   year = "{\noopsort{1973c}}1981",
+@misc{algorandcode,
+    title={algorand/go-algorand: Algorand's official implementation in Go.},
+    url={https://github.com/algorand/go-algorand},
+    howpublished={https://github.com/algorand/go-algorand},
 }
 
-@BOOK{book-full,
-   author = "Donald E. Knuth",
-   title = "Seminumerical Algorithms",
-   volume = 2,
-   series = "The Art of Computer Programming",
-   publisher = "Addison-Wesley",
-   address = "Reading, Massachusetts",
-   edition = "Second",
-   month = "10~" # jan,
-   year = "{\noopsort{1973c}}1981",
-   note = "This is a full BOOK entry",
+@misc{prismcode,
+    title={prism-blockchain/prism-ccs: Anonymized repository of Prism implementation for CCS 2020 submission.},
+    url={\url{https://git.sr.ht/\~prism-blockchain/prism-ccs/tree}},
+    howpublished={\url{https://git.sr.ht/~prism-blockchain/prism-ccs/tree}},
 }
 
-@BOOK{book-crossref,
-   crossref = "whole-set",
-   title = "Seminumerical Algorithms",
-   volume = 2,
-   series = "The Art of Computer Programming",
-   edition = "Second",
-   year = "{\noopsort{1973c}}1981",
-   note = "This is a cross-referencing BOOK entry",
+@misc{spv,
+    title={Simple Payment verification},
+    url={https://bitcoin.org/en/operating-modes-guide\#simplified-payment-verification-spv},
+    howpublished={https://bitcoin.org/en/operating-modes-guide\#simplified-payment-verification-spv},
 }
 
-@BOOK{whole-set,
-   author = "Donald E. Knuth",
-   publisher = "Addison-Wesley",
-   title = "The Art of Computer Programming",
-   series = "Four volumes",
-   year = "{\noopsort{1973a}}{\switchargs{--90}{1968}}",
-   note = "Seven volumes planned (this is a cross-referenced set of BOOKs)",
+@misc{ohiecode,
+    title={ivicanikolicsg/OHIE: OHIE - Blockchain scaling},
+    url={https://github.com/ivicanikolicsg/OHIE},
+    howpublished={https://github.com/ivicanikolicsg/OHIE},
 }
 
-@BOOKLET{booklet-minimal,
-   key = "Kn{\printfirst{v}{1987}}",
-   title = "The Programming of Computer Art",
+@inproceedings{monoxide,
+  author    = {Jiaping Wang and
+               Hao Wang},
+  title     = {Monoxide: Scale out Blockchains with Asynchronous Consensus Zones},
+  booktitle = {16th {USENIX} Symposium on Networked Systems Design and Implementation,
+               {NSDI} 2019, Boston, MA, February 26-28, 2019.},
+  pages     = {95--112},
+  year      = {2019},
+  crossref  = {nsdi2019},
+  url       = {https://www.usenix.org/conference/nsdi19/presentation/wang-jiaping},
+  timestamp = {Mon, 11 Mar 2019 15:52:29 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/nsdi/WangW19},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-@BOOKLET{booklet-full,
-   author = "Jill C. Knvth",
-   title = "The Programming of Computer Art",
-   howpublished = "Vernier Art Center",
-   address = "Stanford, California",
-   month = feb,
-   year = 1988,
-   note = "This is a full BOOKLET entry",
+@proceedings{nsdi2019,
+  editor    = {Jay R. Lorch and
+               Minlan Yu},
+  title     = {16th {USENIX} Symposium on Networked Systems Design and Implementation,
+               {NSDI} 2019, Boston, MA, February 26-28, 2019},
+  publisher = {{USENIX} Association},
+  year      = {2019},
+  url       = {https://www.usenix.org/conference/nsdi19},
+  timestamp = {Mon, 11 Mar 2019 15:52:04 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/nsdi/2019},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-@INCOLLECTION{incollection-minimal,
-   author = "Daniel D. Lincoll",
-   title = "Semigroups of Recurrences",
-   booktitle = "High Speed Computer and Algorithm Organization",
-   publisher = "Academic Press",
-   year = 1977,
+@article{abraham2016solida,
+  title={Solida: A blockchain protocol based on reconfigurable byzantine consensus},
+  author={Abraham, Ittai and Malkhi, Dahlia and Nayak, Kartik and Ren, Ling and Spiegelman, Alexander},
+  journal={arXiv preprint arXiv:1612.02916},
+  year={2016}
 }
 
-@INCOLLECTION{incollection-full,
-   author = "Daniel D. Lincoll",
-   title = "Semigroups of Recurrences",
-   editor = "David J. Lipcoll and D. H. Lawrie and A. H. Sameh",
-   booktitle = "High Speed Computer and Algorithm Organization",
-   number = 23,
-   series = "Fast Computers",
-   chapter = 3,
-   type = "Part",
-   pages = "179--183",
-   publisher = "Academic Press",
-   address = "New York",
-   edition = "Third",
-   month = sep,
-   year = 1977,
-   note = "This is a full INCOLLECTION entry",
+@article{kiayias2016trees,
+  title={On Trees, Chains and Fast Transactions in the Blockchain.},
+  author={Kiayias, Aggelos and Panagiotakos, Giorgos},
+  year={2016}
 }
 
-@INCOLLECTION{incollection-crossref,
-   crossref = "whole-collection",
-   author = "Daniel D. Lincoll",
-   title = "Semigroups of Recurrences",
-   pages = "179--183",
-   note = "This is a cross-referencing INCOLLECTION entry",
+@incollection{ozisik2017graphene,
+  title={Graphene: A new protocol for block propagation using set reconciliation},
+  author={Ozisik, A Pinar and Andresen, Gavin and Bissias, George and Houmansadr, Amir and Levine, Brian},
+  booktitle={Data Privacy Management, Cryptocurrencies and Blockchain Technology},
+  pages={420--428},
+  year={2017},
+  publisher={Springer}
 }
 
-@BOOK{whole-collection,
-   editor = "David J. Lipcoll and D. H. Lawrie and A. H. Sameh",
-   title = "High Speed Computer and Algorithm Organization",
-   booktitle = "High Speed Computer and Algorithm Organization",
-   number = 23,
-   series = "Fast Computers",
-   publisher = "Academic Press",
-   address = "New York",
-   edition = "Third",
-   month = sep,
-   year = 1977,
-   note = "This is a cross-referenced BOOK (collection) entry",
+@inproceedings{better,
+  title={A better method to analyze blockchain consistency},
+  author={Kiffer, Lucianna and Rajaraman, Rajmohan and others},
+  booktitle={Proceedings of the 2018 ACM SIGSAC Conference on Computer and Communications Security},
+  pages={729--744},
+  year={2018},
+  organization={ACM}
 }
 
-@MANUAL{manual-minimal,
-   key = "Manmaker",
-   title = "The Definitive Computer Manual",
+@article{bitcoin,
+  title={Bitcoin: A peer-to-peer electronic cash system},
+  author={Nakamoto, Satoshi},
+  year={2008},
+  publisher={Working Paper}
 }
 
-@MANUAL{manual-full,
-   author = "Larry Manmaker",
-   title = "The Definitive Computer Manual",
-   organization = "Chips-R-Us",
-   address = "Silicon Valley",
-   edition = "Silver",
-   month = apr # "-" # may,
-   year = 1986,
-   note = "This is a full MANUAL entry",
+@inproceedings{fruitchains,
+  title={Fruitchains: A fair blockchain},
+  author={Pass, R. and Shi, E.},
+  booktitle={Proceedings of the ACM Symposium on Principles of Distributed Computing},
+  year={2017},
+  organization={ACM}
 }
 
-@MASTERSTHESIS{mastersthesis-minimal,
-   author = "{\'{E}}douard Masterly",
-   title = "Mastering Thesis Writing",
-   school = "Stanford University",
-   year = 1988,
+@misc{parallel,
+    author = {Matthias Fitzi and Peter Ga{\v{z}}i and Aggelos Kiayias and Alexander Russell},
+    title = {Parallel Chains: Improving Throughput and Latency of Blockchain Protocols via Parallel Composition},
+    howpublished = {Cryptology ePrint Archive, Report 1119},
+    year = {2018},
 }
 
-@MASTERSTHESIS{mastersthesis-full,
-   author = "{\'{E}}douard Masterly",
-   title = "Mastering Thesis Writing",
-   school = "Stanford University",
-   type = "Master's project",
-   address = "English Department",
-   month = jun # "-" # aug,
-   year = 1988,
-   note = "This is a full MASTERSTHESIS entry",
+@article{DBLP:journals/corr/abs-1811-12628,
+  author    = {Haifeng Yu and
+               Ivica Nikolic and
+               Ruomu Hou and
+               Prateek Saxena},
+  title     = {{OHIE:} Blockchain Scaling Made Simple},
+  journal   = {CoRR},
+  volume    = {abs/1811.12628},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1811.12628},
+  archivePrefix = {arXiv},
+  eprint    = {1811.12628},
+  timestamp = {Mon, 03 Dec 2018 07:50:28 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1811-12628},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-@MISC{misc-minimal,
-   key = "Missilany",
-   note = "This is a minimal MISC entry",
+
+
+@inproceedings{byzcoin,
+  title={Enhancing bitcoin security and performance with strong consistency via collective signing},
+  author={Kogias, Eleftherios Kokoris and Jovanovic, Philipp and Gailly, Nicolas and Khoffi, Ismail and Gasser, Linus and Ford, Bryan},
+  booktitle={25th USENIX Security Symposium },
+  pages={279--296},
+  year={2016}
 }
 
-@MISC{misc-full,
-   author = "Joe-Bob Missilany",
-   title = "Handing out random pamphlets in airports",
-   howpublished = "Handed out at O'Hare",
-   month = oct,
-   year = 1984,
-   note = "This is a full MISC entry",
+@inproceedings{cosi,
+  title={Keeping authorities" honest or bust" with decentralized witness cosigning},
+  author={Syta, Ewa and Tamas, Iulia and Visher, Dylan and Wolinsky, David Isaac and Jovanovic, Philipp and Gasser, Linus and Gailly, Nicolas and Khoffi, Ismail and Ford, Bryan},
+  booktitle={Security and Privacy (SP), 2016 IEEE Symposium on},
+  pages={526--545},
+  year={2016},
+  organization={{IEEE}}
 }
 
-@STRING{STOC-key = "OX{\singleletter{stoc}}"}
-
-@STRING{ACM = "The OX Association for Computing Machinery"}
-
-@STRING{STOC = " Symposium on the Theory of Computing"}
-
-@INPROCEEDINGS{inproceedings-minimal,
-   author = "Alfred V. Oaho and Jeffrey D. Ullman and Mihalis Yannakakis",
-   title = "On Notions of Information Transfer in {VLSI} Circuits",
-   booktitle = "Proc. Fifteenth Annual ACM" # STOC,
-   year = 1983,
+@inproceedings{disccoin,
+  title={Bitcoin meets strong consistency},
+  author={Decker, Christian and Seidel, Jochen and Wattenhofer, Roger},
+  booktitle={Proceedings of the 17th International Conference on Distributed Computing and Networking},
+  pages={13},
+  year={2016},
+  organization={ACM}
 }
 
-@INPROCEEDINGS{inproceedings-full,
-   author = "Alfred V. Oaho and Jeffrey D. Ullman and Mihalis Yannakakis",
-   title = "On Notions of Information Transfer in {VLSI} Circuits",
-   editor = "Wizard V. Oz and Mihalis Yannakakis",
-   booktitle = "Proc. Fifteenth Annual ACM" # STOC,
-   number = 17,
-   series = "All ACM Conferences",
-   pages = "133--139",
-   month = mar,
-   year = 1983,
-   address = "Boston",
-   organization = ACM,
-   publisher = "Academic Press",
-   note = "This is a full INPROCEDINGS entry",
+@inproceedings{lewenberg2015bitcoin,
+  title={Bitcoin mining pools: A cooperative game theoretic analysis},
+  author={Lewenberg, Y and Bachrach, Y and Sompolinsky, Y and Zohar, A and Rosenschein, Jeffrey S},
+  booktitle={Proceedings of the 2015 International Conference on Autonomous Agents and Multiagent Systems},
+  year={2015},
+  organization={International Foundation for Autonomous Agents and Multiagent Systems}
 }
 
-@INPROCEEDINGS{inproceedings-crossref,
-   crossref = "whole-proceedings",
-   author = "Alfred V. Oaho and Jeffrey D. Ullman and Mihalis Yannakakis",
-   title = "On Notions of Information Transfer in {VLSI} Circuits",
-   organization = "",
-   pages = "133--139",
-   note = "This is a cross-referencing INPROCEEDINGS entry",
+@article{katabi2002congestion,
+  title={Congestion control for high bandwidth-delay product networks},
+  author={Katabi, Dina and Handley, Mark and Rohrs, Charlie},
+  journal={ACM SIGCOMM computer communication review},
+  volume={32},
+  number={4},
+  pages={89--102},
+  year={2002},
+  publisher={ACM}
 }
 
-@PROCEEDINGS{proceedings-minimal,
-   key = STOC-key,
-   title = "Proc. Fifteenth Annual" # STOC,
-   year = 1983,
+@misc{grindingwiki,
+  title = {{Ethereum Wiki} Proof of Stake FAQs: Grinding Attacks},
+  howpublished = {\url https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQs}},
+ % note = {Accessed: 2010-09-30}
 }
 
-@PROCEEDINGS{proceedings-full,
-   editor = "Wizard V. Oz and Mihalis Yannakakis",
-   title = "Proc. Fifteenth Annual" # STOC,
-   number = 17,
-   series = "All ACM Conferences",
-   month = mar,
-   year = 1983,
-   address = "Boston",
-   organization = ACM,
-   publisher = "Academic Press",
-   note = "This is a full PROCEEDINGS entry",
+@article{de2018bitcoin,
+  title={Bitcoin's Growing Energy Problem},
+  author={de Vries, Alex},
+  journal={Joule},
+  volume={2},
+  number={5},
+  pages={801--805},
+  year={2018},
+  publisher={Elsevier}
 }
 
-@PROCEEDINGS{whole-proceedings,
-   key = STOC-key,
-   organization = ACM,
-   title = "Proc. Fifteenth Annual" # STOC,
-   address = "Boston",
-   year = 1983,
-   booktitle = "Proc. Fifteenth Annual ACM" # STOC,
-   note = "This is a cross-referenced PROCEEDINGS",
+@inproceedings{bitcoin-ng,
+  title={Bitcoin-NG: A Scalable Blockchain Protocol.},
+  author={Eyal, Ittay and Gencer, Adem Efe and Sirer, Emin G{\"u}n and Van Renesse, Robbert},
+  booktitle={NSDI},
+  pages={45--59},
+  year={2016}
 }
 
-@PHDTHESIS{phdthesis-minimal,
-   author = "F. Phidias Phony-Baloney",
-   title = "Fighting Fire with Fire: Festooning {F}rench Phrases",
-   school = "Fanstord University",
-   year = 1988,
+@inproceedings{hybrid,
+  title={Hybrid consensus: Efficient consensus in the permissionless model},
+  author={Pass, Rafael and Shi, Elaine},
+  booktitle={LIPIcs-Leibniz International Proceedings in Informatics},
+  year={2017},
+  organization={Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik}
 }
 
-@PHDTHESIS{phdthesis-full,
-   author = "F. Phidias Phony-Baloney",
-   title = "Fighting Fire with Fire: Festooning {F}rench Phrases",
-   school = "Fanstord University",
-   type = "{PhD} Dissertation",
-   address = "Department of French",
-   month = jun # "-" # aug,
-   year = 1988,
-   note = "This is a full PHDTHESIS entry",
+@misc{cryptoeprint:2019:943,
+    author = {Ling Ren},
+    title = {Analysis of Nakamoto Consensus},
+    howpublished = {Cryptology ePrint Archive, Report 2019/943},
+    year = {2019},
+    note = {\url{https://eprint.iacr.org/2019/943}},
 }
 
-@TECHREPORT{techreport-minimal,
-   author = "Tom Terrific",
-   title = "An {$O(n \log n / \! \log\log n)$} Sorting Algorithm",
-   institution = "Fanstord University",
-   year = 1988,
+@inproceedings{nayak2016stubborn,
+  title={Stubborn mining: Generalizing selfish mining and combining with an eclipse attack},
+  author={Nayak, Kartik and Kumar, Srijan and Miller, Andrew and Shi, Elaine},
+  booktitle={Security and Privacy (EuroS\&P), 2016 IEEE European Symposium on},
+  pages={305--320},
+  year={2016},
+  organization={IEEE}
 }
 
-@TECHREPORT{techreport-full,
-   author = "Tom T{\'{e}}rrific",
-   title = "An {$O(n \log n / \! \log\log n)$} Sorting Algorithm",
-   institution = "Fanstord University",
-   type = "Wishful Research Result",
-   number = "7",
-   address = "Computer Science Department, Fanstord, California",
-   month = oct,
-   year = 1988,
-   note = "This is a full TECHREPORT entry",
+@inproceedings{sapirshtein2016optimal,
+  title={Optimal selfish mining strategies in bitcoin},
+  author={Sapirshtein, Ayelet and Sompolinsky, Yonatan and Zohar, Aviv},
+  booktitle={International Conference on Financial Cryptography and Data Security},
+  year={2016},
+}
+@inproceedings{prismpos,
+  title={Prism++: a throughput-latency-security-incentive optimal proof of stake blockchain algorithm},
+  author={Bagaria, Vivek and Fanti, Giulia and Kannan, Sreeram and Tse, David and Viswanath, Pramod},
+  booktitle={Working paper},
+  pages={},
+  year={2018},
+  organization={}
 }
 
-@UNPUBLISHED{unpublished-minimal,
-   author = "Ulrich {\"{U}}nderwood and Ned {\~N}et and Paul {\={P}}ot",
-   title = "Lower Bounds for Wishful Research Results",
-   note = "Talk at Fanstord University (this is a minimal UNPUBLISHED entry)",
+@article{badertscher2018ouroboros,
+  title={Ouroboros Genesis: Composable Proof-of-Stake Blockchains with Dynamic Availability},
+  author={Badertscher, Christian and Gazi, Peter and Kiayias, Aggelos and Russell, Alexander and Zikas, Vassilis},
+  year={2018}
+}
+@article{eyal2018majority,
+  title={Majority is not enough: Bitcoin mining is vulnerable},
+  author={Eyal, Ittay and Sirer, Emin G{\"u}n},
+  journal={Communications of the ACM},
+  volume={61},
+  number={7},
+  pages={95--102},
+  year={2018},
+  publisher={ACM}
 }
 
-@UNPUBLISHED{unpublished-full,
-   author = "Ulrich {\"{U}}nderwood and Ned {\~N}et and Paul {\={P}}ot",
-   title = "Lower Bounds for Wishful Research Results",
-   month = nov # ", " # dec,
-   year = 1988,
-   note = "Talk at Fanstord University (this is a full UNPUBLISHED entry)",
+@incollection{shi2015galton,
+  title={Galton--Watson Trees},
+  author={Shi, Zhan},
+  booktitle={Branching Random Walks},
+  pages={11--17},
+  year={2015},
+  publisher={Springer}
 }
 
-@MISC{random-note-crossref,
-   key = {Volume-2},
-   note = "Volume~2 is listed under Knuth \cite{book-full}"
+@article{fan2018scalable,
+  title={A Scalable Proof-of-Stake Blockchain in the Open Setting},
+  author={Fan, Lei and Zhou, Hong-Sheng},
+  year={2018}
+}
+
+@inproceedings{gilad2017algorand,
+  title={Algorand: Scaling byzantine agreements for cryptocurrencies},
+  author={Gilad, Yossi and Hemo, Rotem and Micali, Silvio and Vlachos, Georgios and Zeldovich, Nickolai},
+  booktitle={Proceedings of the 26th Symposium on Operating Systems Principles},
+  pages={51--68},
+  year={2017},
+  organization={ACM}
+}
+
+@incollection{li2017securing,
+  title={Securing proof-of-stake blockchain protocols},
+  author={Li, Wenting and Andreina, S{\'e}bastien and Bohli, Jens-Matthias and Karame, Ghassan},
+  booktitle={Data Privacy Management, Cryptocurrencies and Blockchain Technology},
+  pages={297--315},
+  year={2017},
+  publisher={Springer}
+}
+
+@inproceedings{david2018ouroboros,
+  title={Ouroboros Praos: An adaptively-secure, semi-synchronous proof-of-stake blockchain},
+  author={David, Bernardo and Ga{\v{z}}i, Peter and Kiayias, Aggelos and Russell, Alexander},
+  booktitle={Annual International Conference on the Theory and Applications of Cryptographic Techniques},
+  pages={66--98},
+  year={2018},
+  organization={Springer}
+}
+
+@inproceedings{kiayias2017ouroboros,
+  title={Ouroboros: A provably secure proof-of-stake blockchain protocol},
+  author={Kiayias, Aggelos and Russell, Alexander and David, Bernardo and Oliynykov, Roman},
+  booktitle={Annual International Cryptology Conference},
+  pages={357--388},
+  year={2017},
+  organization={Springer}
+}
+
+@inproceedings{ghost,
+  title={Secure high-rate transaction processing in bitcoin},
+  author={Sompolinsky, Yonatan and Zohar, Aviv},
+  booktitle={International Conference on Financial Cryptography and Data Security},
+  pages={507--527},
+  year={2015},
+  organization={Springer}
+}
+
+@article{conflux,
+  title={Scaling Nakamoto Consensus to Thousands of Transactions per Second},
+  author={Li, Chenxing and Li, Peilun and Xu, Wei and Long, Fan and Yao, Andrew Chi-chih},
+  journal={arXiv preprint arXiv:1805.03870},
+  year={2018}
+}
+
+@inproceedings{thunderella,
+  title={Thunderella: Blockchains with optimistic instant confirmation},
+  author={Pass, Rafael and Shi, Elaine},
+  booktitle={Annual International Conference on the Theory and Applications of Cryptographic Techniques},
+  year={2018},
+  organization={Springer}
+}
+
+@article{spectre,
+  title={SPECTRE: A Fast and Scalable Cryptocurrency Protocol.},
+  author={Sompolinsky, Y and Lewenberg, Y and Zohar, A},
+  journal={IACR Cryptology ePrint Archive},
+  year={2016:1159}
+}
+
+@misc{phantom,
+  title={Phantom: A scalable blockdag protocol},
+  author={Sompolinsky, Y and Zohar, A},
+  year={2018},
+  publisher={Cryptology ePrint Archive, Report 2018/104, 2018. https://eprint. iacr. org/2018/104}
+}
+
+@article{ghost_attack,
+  title={The balance attack against proof-of-work blockchains: The R3 testbed as an example},
+  author={Natoli, Christopher and Gramoli, Vincent},
+  journal={arXiv preprint arXiv:1612.09426},
+  year={2016}
+}
+
+@inproceedings{inclusive,
+  title={Inclusive block chain protocols},
+  author={Lewenberg, Yoad and Sompolinsky, Yonatan and Zohar, Aviv},
+  booktitle={International Conference on Financial Cryptography and Data Security},
+  pages={528--547},
+  year={2015},
+  organization={Springer}
+}
+
+@inproceedings{pss16,
+  title={Analysis of the blockchain protocol in asynchronous networks},
+  author={Pass, R and Seeman, L and Shelat, A},
+  booktitle={Annual International Conference on the Theory and Applications of Cryptographic Techniques},
+  year={2017}
+}
+
+@article{bloxroute,
+  title={bloXroute: A Scalable Trustless Blockchain Distribution Network WHITEPAPER},
+  author={Klarman, Uri and Basu, Soumya and Kuzmanovic, Aleksandar and Sirer, Emin G{\"u}n}
+}
+
+@inproceedings{backbone,
+  title={The bitcoin backbone protocol: Analysis and applications},
+  author={Garay, Juan and Kiayias, Aggelos and Leonardos, Nikos},
+  booktitle={Annual International Conference on the Theory and Applications of Cryptographic Techniques},
+  pages={281--310},
+  year={2015},
+  organization={Springer}
+}
+
+@book{feller1968introduction,
+  title={An introduction to probability theory and its applications},
+  author={Feller, William},
+  volume={1},
+  year={1968},
+  publisher={Wiley New York}
+}
+
+@INPROCEEDINGS{decker,
+author={C. Decker and R. Wattenhofer},
+booktitle={IEEE P2P 2013 Proceedings},
+title={Information propagation in the Bitcoin network},
+year={2013},
+volume={},
+number={},
+pages={1-10},
+doi={10.1109/P2P.2013.6688704},
+ISSN={2161-3559},
+month={Sept},}
+
+@misc{vitalik_blocktimes,
+author={Buterin, Vitalik},
+title={On Slow and Fast Block Times},
+year={2015},
+note={\url{https://blog.ethereum.org/2015/09/14/on-slow-and-fast-block-times/}}
+}
+
+@misc{statoshi,
+title={Bandwidth Usage},
+author={Statoshi},
+note={\url{https://statoshi.info/dashboard/db/bandwidth-usage}}
+}
+
+@article{subchains,
+  title={Subchains: A technique to scale bitcoin and improve the user experience},
+  author={Rizun, Peter R},
+  journal={Ledger},
+  volume={1},
+  pages={38--52},
+  year={2016}
+}
+
+@misc{weakblocks1,
+title={Weak block thoughts},
+author={Gavin Andresen},
+howpublished={bitcoin-dev},
+note={\url{https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011157.html}}
+}
+
+@misc{weakblocks2,
+title={Decoupling transactions and POW},
+author={TierNolan},
+howpublished={Bitcoin Forum},
+note={\url{https://bitcointalk.org/index.php?topic=179598.0}}
+}
+@misc{randomwalk,
+  title={Reversible Markov chains and random walks on graphs},
+  author={Aldous, David and Fill, Jim},
+  year={2002},
+  publisher={Berkeley}
+}
+
+@inproceedings{securityofpow,
+  author    = {Arthur Gervais and
+               Ghassan O. Karame and
+               Karl W{\"{u}}st and
+               Vasileios Glykantzis and
+               Hubert Ritzdorf and
+               Srdjan Capkun},
+  title     = {On the Security and Performance of Proof of Work Blockchains},
+  booktitle = {Proceedings of the 2016 {ACM} {SIGSAC} Conference on Computer and
+               Communications Security, Vienna, Austria, October 24-28, 2016},
+  pages     = {3--16},
+  year      = {2016},
+  crossref  = {DBLP:conf/ccs/2016},
+  url       = {https://doi.org/10.1145/2976749.2978341},
+  doi       = {10.1145/2976749.2978341},
+  timestamp = {Tue, 06 Nov 2018 11:07:30 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/ccs/GervaisKWGRC16},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@proceedings{DBLP:conf/ccs/2016,
+  editor    = {Edgar R. Weippl and
+               Stefan Katzenbeisser and
+               Christopher Kruegel and
+               Andrew C. Myers and
+               Shai Halevi},
+  title     = {Proceedings of the 2016 {ACM} {SIGSAC} Conference on Computer and
+               Communications Security, Vienna, Austria, October 24-28, 2016},
+  publisher = {{ACM}},
+  year      = {2016},
+  url       = {http://dl.acm.org/citation.cfm?id=2976749},
+  isbn      = {978-1-4503-4139-4},
+  timestamp = {Mon, 24 Oct 2016 15:38:42 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/ccs/2016},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{ed25519,
+  author    = {Daniel J. Bernstein and
+               Niels Duif and
+               Tanja Lange and
+               Peter Schwabe and
+               Bo{-}Yin Yang},
+  title     = {High-speed high-security signatures},
+  journal   = {J. Cryptographic Engineering},
+  volume    = {2},
+  number    = {2},
+  pages     = {77--89},
+  year      = {2012},
+  url       = {https://doi.org/10.1007/s13389-012-0027-1},
+  doi       = {10.1007/s13389-012-0027-1},
+  timestamp = {Wed, 14 Nov 2018 10:49:35 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/jce/BernsteinDLSY12},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{rocksdb,
+    title={RocksDB | A persistent key-value store},
+    url={https://rocksdb.org},
+    howpublished={https://rocksdb.org},
+}
+
+@inproceedings{scoreboarding,
+ author = {Thornton, James E.},
+ title = {Parallel Operation in the Control Data 6600},
+ booktitle = {Proceedings of the October 27-29, 1964, Fall Joint Computer Conference, Part II: Very High Speed Computer Systems},
+ series = {AFIPS '64 (Fall, part II)},
+ year = {1965},
+ location = {San Francisco, California},
+ pages = {33--40},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/1464039.1464045},
+ doi = {10.1145/1464039.1464045},
+ acmid = {1464045},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@misc{sha256,
+  title={Descriptions of SHA-256, SHA-384 and SHA-512},
+  author={NIST, US},
+  year={2001},
+  publisher={Technical report}
+}
+
+@inproceedings{payment-channel,
+  author    = {Christian Decker and
+               Roger Wattenhofer},
+  title     = {A Fast and Scalable Payment Network with Bitcoin Duplex Micropayment
+               Channels},
+  booktitle = {Stabilization, Safety, and Security of Distributed Systems - 17th
+               International Symposium, {SSS} 2015, Edmonton, AB, Canada, August
+               18-21, 2015, Proceedings},
+  pages     = {3--18},
+  year      = {2015},
+  crossref  = {DBLP:conf/sss/2015},
+  url       = {https://doi.org/10.1007/978-3-319-21741-3\_1},
+  doi       = {10.1007/978-3-319-21741-3\_1},
+  timestamp = {Tue, 14 May 2019 10:00:37 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/sss/DeckerW15},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{lightning,
+  title={The bitcoin lightning network: Scalable off-chain instant payments},
+  author={Poon, Joseph and Dryja, Thaddeus},
+  year={2016}
+}
+
+@proceedings{DBLP:conf/sss/2015,
+  editor    = {Andrzej Pelc and
+               Alexander A. Schwarzmann},
+  title     = {Stabilization, Safety, and Security of Distributed Systems - 17th
+               International Symposium, {SSS} 2015, Edmonton, AB, Canada, August
+               18-21, 2015, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {9212},
+  publisher = {Springer},
+  year      = {2015},
+  url       = {https://doi.org/10.1007/978-3-319-21741-3},
+  doi       = {10.1007/978-3-319-21741-3},
+  isbn      = {978-3-319-21740-6},
+  timestamp = {Tue, 14 May 2019 10:00:37 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/sss/2015},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{decker2018eltoo,
+  title={eltoo: A simple layer2 protocol for bitcoin},
+  author={Decker, Christian and Russell, Rusty and Osuntokun, Olaoluwa},
+  journal={White paper: https://blockstream. com/eltoo. pdf},
+  year={2018}
+}
+
+@inproceedings{kokoris2018omniledger,
+  title={Omniledger: A secure, scale-out, decentralized ledger via sharding},
+  author={Kokoris-Kogias, Eleftherios and Jovanovic, Philipp and Gasser, Linus and Gailly, Nicolas and Syta, Ewa and Ford, Bryan},
+  booktitle={2018 IEEE Symposium on Security and Privacy (SP)},
+  pages={583--598},
+  year={2018},
+  organization={IEEE}
+}
+
+@inproceedings{buterin2016ethereum,
+  title={Ethereum 2.0 mauve paper},
+  author={Buterin, Vitalik},
+  booktitle={Ethereum Developer Conference},
+  volume={2},
+  year={2016}
+}
+
+@article{prism-theory,
+  title={Deconstructing the blockchain to approach physical limits},
+  author={Bagaria, Vivek and Kannan, Sreeram and Tse, David and Fanti, Giulia and Viswanath, Pramod},
+  journal={accepted to ACM CCS 2019,  arXiv:1810.08092},
+  year={2018}
+}
+
+@inproceedings{raju2018mlsm,
+  title={mlsm: Making authenticated storage faster in ethereum},
+  author={Raju, Pandian and Ponnapalli, Soujanya and Kaminsky, Evan and Oved, Gilad and Keener, Zachary and Chidambaram, Vijay and Abraham, Ittai},
+  booktitle={10th $\{$USENIX$\}$ Workshop on Hot Topics in Storage and File Systems (HotStorage 18)},
+  year={2018}
+}
+
+@article{hileman2017global,
+  title={Global cryptocurrency benchmarking study},
+  author={Hileman, Garrick and Rauchs, Michel},
+  journal={Cambridge Centre for Alternative Finance},
+  volume={33},
+  year={2017}
+}
+
+@inproceedings{kazan2015value,
+  title={Value Creation in Cryptocurrency Networks: Towards A Taxonomy of Digital Business Models for Bitcoin Companies.},
+  author={Kazan, Erol and Tan, Chee-Wee and Lim, Eric TK},
+  booktitle={PACIS},
+  pages={34},
+  year={2015}
+}
+
+
+@article{pilkington201611,
+  title={11 Blockchain technology: principles and applications},
+  author={Pilkington, Marc},
+  journal={Research handbook on digital transformations},
+  volume={225},
+  year={2016},
+  publisher={Edward Elgar Publishing Cheltenham, UK}
+}
+
+@inproceedings{wust2018you,
+  title={Do you need a Blockchain?},
+  author={W{\"u}st, Karl and Gervais, Arthur},
+  booktitle={2018 Crypto Valley Conference on Blockchain Technology (CVCBT)},
+  pages={45--54},
+  year={2018},
+  organization={IEEE}
+}
+
+@article{cong2019blockchain,
+  title={Blockchain disruption and smart contracts},
+  author={Cong, Lin William and He, Zhiguo},
+  journal={The Review of Financial Studies},
+  volume={32},
+  number={5},
+  pages={1754--1797},
+  year={2019},
+  publisher={Oxford University Press}
+}
+
+@inproceedings{yin2019hotstuff,
+  title={Hotstuff: Bft consensus with linearity and responsiveness},
+  author={Yin, Maofan and Malkhi, Dahlia and Reiter, Michael K and Gueta, Guy Golan and Abraham, Ittai},
+  booktitle={Proceedings of the 2019 ACM Symposium on Principles of Distributed Computing},
+  pages={347--356},
+  year={2019}
+}
+
+@inproceedings{miller2016honey,
+  title={The honey badger of BFT protocols},
+  author={Miller, Andrew and Xia, Yu and Croman, Kyle and Shi, Elaine and Song, Dawn},
+  booktitle={Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security},
+  pages={31--42},
+  year={2016},
+  organization={ACM}
+}
+
+@article{kwon2014tendermint,
+  title={Tendermint: Consensus without mining},
+  author={Kwon, Jae},
+  journal={Draft v. 0.6, fall},
+  volume={1},
+  pages={11},
+  year={2014}
+}
+
+@misc{gueta1804sbft,
+  title={Sbft: a scalable decentralized trust infrastructure for blockchains, 2018},
+  author={Gueta, GG and Abraham, I and Grossman, S and Malkhi, D and PINKAS, B and REITER, MK and SEREDINSCHI, DA and TAMIR, O and TOMESCU, A},
+  year={1804}
+}
+
+@inproceedings{ibm,
+  title={Hyperledger fabric: a distributed operating system for permissioned blockchains},
+  author={Androulaki, Elli and Barger, Artem and Bortnikov, Vita and Cachin, Christian and Christidis, Konstantinos and De Caro, Angelo and Enyeart, David and Ferris, Christopher and Laventman, Gennady and Manevich, Yacov and others},
+  booktitle={Proceedings of the Thirteenth EuroSys Conference},
+  pages={30},
+  year={2018},
+  organization={ACM}
 }
