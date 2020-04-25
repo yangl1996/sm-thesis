@@ -1,0 +1,119 @@
+\chapter{Parameters Used in Evaluations}
+\label{apx:datapoints}
+
+Here we present the parameters used in the experiment in \S\ref{sec:eval-performance} for \prism (Table~\ref{table:prism-params}, Table~\ref{table:prism-beta}), \algorand (Table~\ref{table:algorand-params}), \bng (Table~\ref{table:bng-params}), and the longest chain protocol (Table~\ref{table:lc-params}).
+
+\begin{table}[t]
+	\centering
+	\caption{Parameters of \prism.}
+	%\resizebox{\columnwidth}{!}{
+	\begin{tabular}{ r | c } 
+	 \hline
+	 Parameter & Value \\ [0.5ex] 
+	 \hline\hline
+	 Transaction Block Size & 228 transactions \\
+	 Voter Block Size & 1000 votes \\
+	 Proposer Block Size & 7000 references \\
+	 Voter Chains ($m$) & 1000 \\
+	 Transaction Mining Rate & 350 Blocks/s \\
+	 Voter Mining Rate & Table~\ref{table:prism-beta}\\
+	 Proposer Mining Rate & Table~\ref{table:prism-beta}\\
+	 \hline
+	\end{tabular}
+	%}
+\label{table:prism-params}
+\end{table}
+
+\begin{table}[t]
+	\centering
+	\caption{Mining rate $f$ of proposer and voter blocks for different $\beta$ in \prism. The unit is Blocks/s.}
+	%\resizebox{\columnwidth}{!}{
+	\begin{tabular}{ r | c } 
+	 \hline
+	 $\beta$ & Mining Rate ($f$) \\ [0.5ex] 
+	 \hline\hline
+	 0.20 & 0.535 \\
+	 0.33 & 0.185 \\
+	 0.40 & 0.097 \\
+	 0.42 & 0.081 \\
+	 0.43 & 0.069 \\
+	 0.44 & 0.054 \\
+	 \hline
+	\end{tabular}
+	%}
+\label{table:prism-beta}
+\end{table}
+
+
+\begin{table}[t]
+	\centering
+	\caption{Parameters of \algorand. Block Size: number of transactions in a block. Assembly Time: maximum time spent on assembling a block (this limit was never hit in the experiment). $\lambda$: expected time to reach consensus on block hash. $\Lambda$: expected time to reach consensus on the actual block. Detailed definition in~\cite{algorand}.}
+	%\resizebox{\columnwidth}{!}{
+	\begin{tabular}{ r | c | c | c } 
+	 \hline
+	 Block Size & Assembly Time (s) & $\lambda$ (s) & $\Lambda$ (s) \\ [0.5ex] 
+	 \hline\hline
+	 1287 & 0.5 & 0.6 & 1.6 \\
+	 4366 & 0.8 & 1.2 & 3.0 \\
+	 8733 & 1.6 & 1.9 & 6.5 \\
+	 13100 & 1.6 & 1.9 & 10.0 \\
+	 17294 & 1.6 & 2.0 & 13.0 \\
+	 21504 & 1.9 & 2.3 & 16.0 \\
+	 42334 & 3.5 & 3.9 & 38.0 \\
+	 64614 & 5.0 & 5.4 & 56.0 \\
+	 85513 & 7.0 & 7.4 & 73.0 \\
+	 85836 & 7.0 & 7.4 & 68.0 \\
+	 103004 & 8.4 & 8.8 & 84.0 \\
+	 116580 & 9.5 & 9.9 & 99.0 \\
+	 133766 & 11.0 & 11.4 & 110.0 \\
+	 \hline
+	\end{tabular}
+	%}
+\label{table:algorand-params}
+\end{table}
+
+\begin{table}[t]
+	\centering
+	\caption{Parameters of \bng.}
+	\begin{tabular}{ r | c } 
+	 \hline
+	 Parameter & Value \\ [0.5ex] 
+	 \hline\hline
+	 Key Block Mining Rate & 0.10 Block/s \\
+	 Micro Block Interval & 15000 $\mu\text{s}$ \\
+	 Block Size & 500 transactions \\
+	 \hline
+	\end{tabular}
+\label{table:bng-params}
+\end{table}
+
+\begin{table}[t]
+	\centering
+	\caption{Mining rate $f$ for different $\beta$ and block sizes in the longest chain protocol. Here block sizes are in terms of transactions.}
+	%\resizebox{\columnwidth}{!}{
+	\begin{tabular}{ r | r | c } 
+	 \hline
+	 $\beta$ & Block Size & Mining Rate ($f$) \\ [0.5ex] 
+	 \hline\hline
+	 \multirow{8}{*}{0.20} & 10 & 0.404 \\
+	                       & 260 & 0.262 \\
+	                       & 1000 & 0.221 \\
+	                       & 4000 & 0.144 \\
+	                       & 10000 & 0.110 \\
+	                       & 20000 & 0.079 \\
+	                       & 60000 & 0.064 \\
+	                       & 200000 & 0.027 \\
+	 \hline
+	 \multirow{4}{*}{0.33} & 10 & 0.168 \\
+	                       & 260 & 0.117 \\
+	                       & 1000 & 0.119 \\
+	                       & 4000 & 0.065 \\
+	 \hline
+	\end{tabular}
+	%}
+\label{table:lc-params}
+\end{table}
+
+
+
+

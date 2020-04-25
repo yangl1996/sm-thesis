@@ -1,4 +1,4 @@
-\section{Evaluation}
+\chapter{Evaluation}
 \label{sec:eval}
 
 Our evaluation answers the following questions:
@@ -26,7 +26,7 @@ We cap transaction generation rate to 75,000 tps to avoid hitting this bottlenec
 %\smallskip
 \noindent{\bf Performance tuning and security:} All protocols in the experiments have design parameters, and we tried our best to tune these parameters for performance and security. For \prism, we calculate the optimal mining rate $f$ for proposer and voter blocks to achieve the best confirmation latency, given the adversarial ratio $\beta$ and desired confirmation confidence $\epsilon$. We cap the size of transaction blocks to be 40 KB, and set the mining rate for transaction blocks such that they support $80,000$ tps. Unless otherwise stated, we turn off the spam mitigation mechanism in \prism (we evaluate its effectiveness in \S\ref{sec:eval-attack}).  To ensure security, we calculate the expected {\em forking rate} $\alpha$, i.e. fraction of blocks not on the main chain, given $f$ and the block propagation delay $\Delta$. We compare $\alpha$ against the forking rate actually measured in each experiment, to ensure that the system has met the target security level. We follow the same process for \bng and the longest chain protocol. For \algorand, we adopt the default security parameters set in its production implementation. Then we hand-tune its latency parameters $\lambda$ and $\Lambda$. Specifically, we reduce $\lambda$ and $\Lambda$ until a round times out, and use the settings that yield the best confirmation latency. For \prism, we target a confirmation confidence, $\epsilon$, in the order of $10^{-9}$. For \bng and the longest chain protocol, we target $\epsilon$ in the order of $10^{-5}$. For \algorand, the blockchain halts with a probability in the order of $10^{-9}$.
 
-\subsection{Throughput and Latency}
+\section{Throughput and Latency}
 \label{sec:eval-performance}
 
 In this experiment, we measure the transaction throughput and confirmation latency of \prism at different adversarial ratio $\beta$, and compare that with \algorand, \bng and the longest chain protocol. For \algorand, we use its default setting of security parameters, which targets $\beta=20\%$.\footnote{The maximum possible security level for Algorand is $\beta = 33\%$, but its latency is expected to increase substantially as $\beta$ approaches 33\%~\cite{algorand}.} For \bng and the longest chain protocol, we experiment with two adversarial ratios: $\beta=20\%$ and $\beta=33\%$. In both \algorand and the longest chain protocol, there is tradeoff between throughput and confirmation latency by choosing different block sizes. We explore this tradeoff and present it in a curve. For \algorand, we try block sizes between 300 KB to 32 MB. For the longest chain protocol, we try block sizes between 1.7 KB  to  33.6 MB. The parameters used in this experiment are available in Appendix~\ref{apx:datapoints}. All four protocols are deployed on the same hardware and network topology as described above. We run each experiment for a minimum of 10 minutes and report the average transaction throughput and latency. The results are shown in Figure~\ref{fig:compare}.
@@ -46,7 +46,7 @@ A blockchain client has two roles: (1) it participates in the consensus protocol
 
 %that is $10\times$ better than the longest chain protocol even at its lowest .
 
-\subsection{Scalability}
+\section{Scalability}
 
 \label{sec:eval-scale}
 \vspace{-1mm}
@@ -81,7 +81,7 @@ First, we increase the number of clients while keeping the topology a random 4-r
 
 In all cases, the forking rate stays stable and is under $0.13$, proving that the system is secure for $\beta=40\%$. This suggests that \prism is able to scale to a large number of users, as long as the underlying peer-to-peer network provides a reasonable block propagation delay. We also provide the distributions of block propagation delay in each topology in Appendix~\ref{apx:propagation}.
 
-\subsection{Resource Utilization}
+\section{Resource Utilization}
 \label{sec:eval-resource}
 
 In this experiment, we evaluate the resource utilization of our \prism implementation, and how it performs with limited network bandwidth and CPU resources. 
@@ -176,7 +176,7 @@ While we chose mid-end AWS EC2 instances for  experiments, our results show that
     \vspace{-3mm}
 \end{table}
 
-\subsection{Performance Under Active Attack}
+\section{Performance Under Active Attack}
 \label{sec:eval-attack}
 
 In the following experiments, we evaluate how \prism performs in the presence of active attacks. Specifically, we consider three  types of attacks: {\em spamming}, \textit{censorship}, and \textit{balancing} attacks. Spamming and censorship attacks aim to reduce network throughput, while balancing attacks aim to increase confirmation latency. 

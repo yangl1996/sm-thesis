@@ -1,11 +1,11 @@
-\section{Implementation}
+\chapter{Implementation}
 \label{sec:implementation}
 
 We have implemented a \prism client in about 10,000 lines of Rust code and can be found at~\cite{prismcode}. We describe the architecture of our implementation and highlight several design decisions that are key to its high performance.
 
 \label{sec:implementation-architecture}
 
-\subsection{Architecture}
+\section{Architecture}
 % \vb{Similar to Bitcoin, a \textit{coin} is the fundamental entity of the currency in Prism. A coin is a $256$ length binary string which has a value and an owner. A \textit{transaction} `spends' a set of input coins and produces a new set of output coins such that the sum of the value of the input coins is equal to the sum of the value of the output coins. The output coins potentially have different owners from the input coins and this is the way users exchange money in the system.
 % The \textit{history} (ledger) is defined as the ordered list of transactions and for a given history, \textit{UTXO} set is defined as the set of unspent output coins of all the transactions in the history. A transaction is valid w.r.t to a ledger iff it's input coins are in the UTXO set. Our implementation uses multi- input-multi-output transactions similar to pay-to-public-key (P2PK) in Bitcoin and Algorand~\cite{algorand, algorandcode}. We use Ed25519~\cite{ed25519} for digital signatures and SHA-256~\cite{sha256} as the hashing algorithm.}
 
@@ -86,7 +86,7 @@ The \textbf{Block Database} stores every block that a node has received in its o
 
 \fi
 
-\subsection{Performance Optimizations}
+\section{Performance Optimizations}
 
 \label{sec:implementation-highlights}
 
@@ -162,7 +162,7 @@ As a result, in our \prism implementation, the Block Structure Manager and the L
 
 
 
-\subsubsection{Concurrent Access to Block Structure Database}
+\subsection{Concurrent Access to Block Structure Database}
 
 As described in Section~\ref{sec:implementation-architecture}, all three modules need to access the Block Structure Database concurrently, especially the Block Structure Manager which has a pool of worker threads processing new blocks in parallel. More specifically, each worker thread in the Block Structure Manager reads the database to perform block validation and insert new data; the Ledger Manager repeatedly queries the database and updates the ledger information stored in it; and the Miner repeatedly queries the database. Although such concurrent access is not forbidden by RocksDB, no consistency is guaranteed, either. For example, the Ledger Manager could have queried the database while a Block Structure Manager thread is updating it, getting inconsistent view of the blockchain. Usually a global lock on the Block Structure Database would have solved the problem, but it greatly limits concurrency.
 

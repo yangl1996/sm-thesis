@@ -1,5 +1,5 @@
 
-\section{Overview of \prism}
+\chapter{Overview of \prism}
 \label{sec:overview}
 
 %\ma{I think we need to refer to the Prism theory paper in this section. We are giving the intuition behind the protocol here, but it's important to state that the security properties have been formally proved.}
@@ -51,7 +51,7 @@ The voter blocks vote for transactions indirectly by voting for proposer blocks,
 
 \if 0
 
-\subsection{Security Model}
+\section{Security Model}
 \vb{Let $\mathcal{N}$ denote  the nodes in the system and with of loss of generality, we assume each node has equal mining power. Let $\mathcal{H} \subseteq \mathcal{N}$ denote the set of honest nodes and $\mathcal{N} \setminus \mathcal{H}$ is set the adversarial nodes. The fraction of adversarial nodes, $\beta = 1 - \frac{|\mathcal{H}|}{|\mathcal{N}|}$, is assumed to be less then $0.5$. 
 %We assume a network model where the delay for a block of size $B$ is equal to $\Delta = \frac{B}{C}+D$, where $B/C$ is the processing delay and $D$ is the propagation delay.
 %We model the protocol as running in rounds where each round is of duration equal to the delay ($\Delta$) corresponding to the largest sized block in the \prism protocol. 
@@ -62,7 +62,7 @@ However, the adversary cannot perform certain actions such as modifying the bloc
 
 \fi
 
-\subsection{Security and Latency}
+\section{Security and Latency}
 \label{sec:prism-latency}
 
 %The ledger is maintained by the leader proposer blocks at all the levels. 
@@ -90,7 +90,7 @@ where $c_1(\beta)$ and $c_2(\beta) $ are $\beta$ dependent constants.
 For large number of voter chains $m$, the first term dominates the above equation and therefore Prism achieves near optimal latency, i.e. proportional to the propagation delay $D$ and independent of the reversal probability. Figure \ref{fig:rd} compares the latency-reliability tradeoffs of \prism and the longest chain protocol. Note that (\ref{eq:latency}) is a worst-case latency bound that holds for {\em all} attacks. In Section \ref{sec:balancing}, we will evaluate the latency of our system under the balancing attack. 
 
 
-\subsection{Throughput}
+\section{Throughput}
 \label{sec:thruput}
 
 To keep \prism secure, the mining rate and the size of the voter blocks have to be chosen such that each voter chain has little forking. The mining rate and the size of the proposer blocks have to be also chosen such that there is very little forking in the proposer tree. Otherwise, the adversary can propose a block at each level, breaking the liveness of the system. Hence, the throughput of \prism would be as low as the longest chain protocol if transactions were carried by the proposer blocks directly. 
