@@ -49,11 +49,9 @@ A blockchain client has two roles: (1) it participates in the consensus protocol
 \section{Scalability}
 
 \label{sec:eval-scale}
-\vspace{-1mm}
 \begin{table}[ht]
 	\centering
 	\caption{\small Performance of \prism with different network topologies.}
-	\vspace{-2mm}
 	\resizebox{\columnwidth}{!}{
 	\begin{tabular}{| c || c | c c c |} 
 	 \hline
@@ -72,7 +70,6 @@ A blockchain client has two roles: (1) it participates in the consensus protocol
 	\end{tabular}
 	}
 	\label{table:scale}
-	\vspace{-2mm}
 	\end{table}
 
 In this experiment, we evaluate \prism's ability to scale to a large number of users. For each client, we use the same network and hardware configuration as in other experiments, and target an adversarial ratio $\beta=40\%$. The results are shown in Table~\ref{table:scale}.
@@ -94,10 +91,8 @@ In this experiment, we evaluate the resource utilization of our \prism implement
 \begin{figure}
     \centering
     \includegraphics{figures/resource-fig-bw.pdf}
-        \vspace{-2mm}
     \caption{\small Performance of \prism with different network bandwidth at each client. The in-memory size of a transaction is 168 bytes.}
     \label{fig:bw}
-    \vspace{-2mm}
 \end{figure}
 
 \begin{table}[ht]
@@ -128,10 +123,8 @@ Table~\ref{table:bw-profiling} provides a breakdown of bandwidth usage. Our impl
 \begin{figure}
     \centering
     \includegraphics{figures/resource-fig-cpu.pdf}
-        \vspace{-3mm}
 \caption{\small Performance of \prism with different number of CPU cores at each client}
     \label{fig:cpu}
-    \vspace{-3mm}
 \end{figure}
 
 \noindent{\bf CPU:} Figure~\ref{fig:cpu} shows the throughput of \prism as we change the number of CPU cores for each client. The throughput scales proportionally to the number of cores, and stops to grow after 7 cores because the transaction generation rate is capped. This shows that our implementation handles more than 10,000 tps per CPU core, and the parallelization techniques discussed in \S\ref{sec:implementation} are effective. 
@@ -144,9 +137,7 @@ While we chose mid-end AWS EC2 instances for  experiments, our results show that
 
 \begin{table}[ht]
 \centering
-\vspace{-3mm}
 \caption{\small CPU usage breakdown of our \prism implementation.}
-\vspace{-2mm}
 \resizebox{0.72\columnwidth}{!}{
 \begin{tabular}{| c | c || r |} 
  \hline
@@ -173,7 +164,6 @@ While we chose mid-end AWS EC2 instances for  experiments, our results show that
 \end{tabular}
 }
 \label{table:profiling}
-    \vspace{-3mm}
 \end{table}
 
 \section{Performance Under Active Attack}
@@ -226,10 +216,8 @@ We point out that miners can extend this method by monitoring the reputation of 
 \begin{figure}
     \centering
     \includegraphics{figures/attack-fig-spamming.pdf}
-    \vspace{-2mm}
     \caption{\small Effectiveness of random jitter in defending against spam attack. Jitters follow uniform distributions and we report the maximum jitter that we add. Spam traffic amount is normalized to the case when no jitter is added.}
     \label{fig:attack-spamming}
-    \vspace{-2mm}
 \end{figure}
 
 
@@ -245,7 +233,6 @@ We point out that miners can extend this method by monitoring the reputation of 
     \includegraphics{figures/attack-fig-censor.pdf}
     \caption{\small Performance of \prism under  censorship attack.}
     \label{fig:attack-censor}
-    \vspace{-5mm}
 \end{figure}
 
 \noindent{\bf Censorship Attack.}
@@ -257,10 +244,8 @@ In a censorship attack, malicious clients mine and broadcast empty transaction b
 \begin{figure}
     \centering
     \includegraphics{figures/attack-fig-balancing.pdf}
-    \vspace{-2mm}
     \caption{\small Performance of \prism under balancing attack. We also mark the confirmation latency of the longest chain protocol with the same security guarantee.}
     \label{fig:attack-balancing}
-    \vspace{-4mm}
 \end{figure}
 
 \noindent{\bf Balancing Attack.}
