@@ -288,7 +288,7 @@ The details of this confidence interval calculation are included in Appendix~\re
 
 In Prism, miners do not validate transactions before including them in blocks.
 This introduces the possibility of spamming, where an adversary could generate a large number of conflicting transactions and send them to different nodes across the network.  
-The nodes would then mine all of these transactions into blocks, causing miners and validators to waste storage  and computational  resources.\footnote{While a discussion of incentives is beyond the scope of this paper, it is important to note that fees alone cannot prevent such spamming. Assuming nodes only pay for transactions that make it to into the ledger, the adversary would not be charged for conflicting transactions that get removed during sanitization.}
+The nodes would then mine all of these transactions into blocks, causing miners and validators to waste storage  and computational  resources.\footnote{While a discussion of incentives is beyond the scope of this thesis, it is important to note that fees alone cannot prevent such spamming. Assuming nodes only pay for transactions that make it to into the ledger, the adversary would not be charged for conflicting transactions that get removed during sanitization.}
 %spam/duplicate transactions
 % There are a few practical mechanisms for circumventing this. 
 Notice that protocols like the longest chain are not susceptible to this attack because transactions are validated prior to block creation. 
