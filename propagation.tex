@@ -5,38 +5,40 @@
 
 
 \begin{figure}[t]
-   \centering
-   \includegraphics[width=0.8\linewidth]{figures/delay100nodes.pdf}
-   \caption{Block propagation delay. Nodes$=100$, Degree$=4$, Diameter$=5$}%\vspace{-6mm}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+   \includegraphics[width=\linewidth]{figures/delay100nodes.pdf}
+   \caption{Nodes$=100$, Degree$=4$, Diameter$=5$}%\vspace{-6mm}
    \label{fig:propagation1}
- \end{figure}
- 
- \begin{figure}[t]
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
    \centering
-   \includegraphics[width=0.8\linewidth]{figures/delay300nodes4.pdf}
-   \caption{Block propagation delay. Nodes$=300$, Degree$=4$, Diameter$=7$}%\vspace{-6mm}
+   \includegraphics[width=\linewidth]{figures/delay300nodes4.pdf}
+   \caption{Nodes$=300$, Degree$=4$, Diameter$=7$}%\vspace{-6mm}
    \label{fig:propagation2}
- \end{figure}
- 
- \begin{figure}[t]
+ \end{subfigure}%
+    \newline
+    \begin{subfigure}{.5\textwidth}
    \centering
-   \includegraphics[width=0.8\linewidth]{figures/delay300nodes6.pdf}
-   \caption{Block propagation delay. Nodes$=300$, Degree$=6$, Diameter$=5$}%\vspace{-6mm}
+   \includegraphics[width=\linewidth]{figures/delay300nodes6.pdf}
+   \caption{Nodes$=300$, Degree$=6$, Diameter$=5$}%\vspace{-6mm}
    \label{fig:propagation3}
- \end{figure}
- 
- \begin{figure}[t]
+ \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
    \centering
-   \includegraphics[width=0.8\linewidth]{figures/delay1000nodes4.pdf}
-   \caption{Block propagation delay. Nodes$=1000$, Degree$=4$, Diameter$=9$}%\vspace{-6mm}
+   \includegraphics[width=\linewidth]{figures/delay1000nodes4.pdf}
+   \caption{Nodes$=1000$, Degree$=4$, Diameter$=9$}%\vspace{-6mm}
    \label{fig:propagation4}
- \end{figure}
- 
- \begin{figure}[t]
+ \end{subfigure}%
+    \newline
+    \begin{subfigure}{.5\textwidth}
    \centering
-   \includegraphics[width=0.8\linewidth]{figures/delay1000nodes8.pdf}
-   \caption{Block propagation delay. Nodes$=1000$, Degree$=8$, Diameter$=5$}
+   \includegraphics[width=\linewidth]{figures/delay1000nodes8.pdf}
+   \caption{Nodes$=1000$, Degree$=8$, Diameter$=5$}
    \label{fig:propagation5}
- \end{figure}
+ \end{subfigure}
  
-
+    \caption{Block propagation delay in the testbed.}
+    \label{fig:propagation}
+\end{figure}

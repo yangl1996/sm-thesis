@@ -51,7 +51,7 @@ A blockchain client has two roles: (1) it participates in the consensus protocol
 \label{sec:eval-scale}
 \begin{table}[ht]
 	\centering
-	\caption{\small Performance of \prism with different network topologies.}
+	\caption{Performance of \prism with different network topologies.}
 	\begin{tabular}{| c || c | c c c |} 
 	 \hline
 	 Property & \#Nodes & 100 & 300 & 1000 \\ [0.5ex] 
@@ -89,13 +89,13 @@ In this experiment, we evaluate the resource utilization of our \prism implement
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{figures/resource-fig-bw.pdf}
-    \caption{\small Performance of \prism with different network bandwidth at each client. The in-memory size of a transaction is 168 bytes.}
+    \caption[Performance of Prism with different network bandwidth at each client.]{Performance of \prism with different network bandwidth at each client. The in-memory size of a transaction is 168 bytes.}
     \label{fig:bw}
 \end{figure}
 
 \begin{table}[ht]
 \centering
-\caption{\small Network bandwidth usage breakdown of \prism measured on a 200 Mbps interface. Network Headroom is the unused bandwidth necessary for the block propagation delay to stay stable. Serialization overhead is wasted space when serializing in-memory objects for network transmission. Messaging stands for non-block messages.}
+    \caption[Network bandwidth usage breakdown of Prism.]{Network bandwidth usage breakdown of \prism measured on a 200 Mbps interface. Network Headroom is the unused bandwidth necessary for the block propagation delay to stay stable. Serialization overhead is wasted space when serializing in-memory objects for network transmission. Messaging stands for non-block messages.}
 \begin{tabular}{| c | c | c || r |} 
  \hline
  \multicolumn{3}{|c||}{Usage} & $\%$Bandwidth \\ [0.5ex] 
@@ -119,7 +119,7 @@ Table~\ref{table:bw-profiling} provides a breakdown of bandwidth usage. Our impl
 \begin{figure}
     \centering
     \includegraphics[width=0.65\textwidth]{figures/resource-fig-cpu.pdf}
-\caption{\small Performance of \prism with different number of CPU cores at each client}
+\caption{Performance of \prism with different number of CPU cores at each client.}
     \label{fig:cpu}
 \end{figure}
 
@@ -133,7 +133,7 @@ While we chose mid-end AWS EC2 instances for  experiments, our results show that
 
 \begin{table}[ht]
 \centering
-\caption{\small CPU usage breakdown of our \prism implementation.}
+\caption{CPU usage breakdown of our \prism implementation.}
 \begin{tabular}{| c | c || r |} 
  \hline
  \multicolumn{2}{|c||}{Operation} & $\%$CPU \\ [0.5ex] 
@@ -210,7 +210,7 @@ We point out that miners can extend this method by monitoring the reputation of 
 \begin{figure}
     \centering
     \includegraphics[width=0.65\textwidth]{figures/attack-fig-spamming.pdf}
-    \caption{\small Effectiveness of random jitter in defending against spam attack. Jitters follow uniform distributions and we report the maximum jitter that we add. Spam traffic amount is normalized to the case when no jitter is added.}
+    \caption[Effectiveness of random jitter against spam attack.]{Effectiveness of random jitter in defending against spam attack. Jitters follow uniform distributions and we report the maximum jitter that we add. Spam traffic amount is normalized to the case when no jitter is added.}
     \label{fig:attack-spamming}
 \end{figure}
 
@@ -225,7 +225,7 @@ We point out that miners can extend this method by monitoring the reputation of 
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{figures/attack-fig-censor.pdf}
-    \caption{\small Performance of \prism under  censorship attack.}
+    \caption{Performance of \prism under  censorship attack.}
     \label{fig:attack-censor}
 \end{figure}
 
@@ -238,7 +238,7 @@ In a censorship attack, malicious clients mine and broadcast empty transaction b
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{figures/attack-fig-balancing.pdf}
-    \caption{\small Performance of \prism under balancing attack. We also mark the confirmation latency of the longest chain protocol with the same security guarantee.}
+    \caption[Performance of Prism under balancing attack.]{Performance of \prism under balancing attack. We also mark the confirmation latency of the longest chain protocol with the same security guarantee.}
     \label{fig:attack-balancing}
 \end{figure}
 

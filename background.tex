@@ -24,7 +24,7 @@ A miner earns the right to append a block after solving a cryptographic puzzle, 
 \begin{center}
 \includegraphics[width=0.75\textwidth]{fast_confirmation_comparision_2.pdf}
 \end{center}
-\caption{\small Depth of confirmation: longest chain vs. \prism. (a) The longest chain protocol requires a block $Ho$ to be many blocks deep for reliable confirmation, so that an adversary mining in private cannot create a longer chain to reverse block $Ho$. (b) \prism allows each voter block to be very shallow but relies on many voter chains to increase the reliability.}
+    \caption[Depth of confirmation: longest chain vs. Prism.]{Depth of confirmation: longest chain vs. \prism. (a) The longest chain protocol requires a block $Ho$ to be many blocks deep for reliable confirmation, so that an adversary mining in private cannot create a longer chain to reverse block $Ho$. (b) \prism allows each voter block to be very shallow but relies on many voter chains to increase the reliability.}
 \label{fig:double_spend}
 \end{figure}
 
@@ -53,7 +53,7 @@ A critical attack on the longest chain protocol is the {\em private  double-spen
 \begin{center}
 \includegraphics[width=0.6\textwidth]{figures/reliability-depth.pdf}
 \end{center}
-\caption{\label{fig:rd} \small Reliability as a function of confirmation depth. The reversal probability of \prism has a factor $m$ improvement over the longest chain protocol in the exponential rate of decrease, where $m$ is the number of voter chains (introduced in \S\ref{sec:overview}).}
+    \caption[Reliability as a function of confirmation depth.]{\label{fig:rd} Reliability as a function of confirmation depth. The reversal probability of \prism has a factor $m$ improvement over the longest chain protocol in the exponential rate of decrease, where $m$ is the number of voter chains (introduced in \S\ref{sec:overview}).}
 \end{figure}
 \section{Throughput Limitation}
 \label{s:lc-thput}
