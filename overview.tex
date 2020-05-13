@@ -6,6 +6,14 @@
 
 The selection of a main chain in a blockchain protocol can be viewed as electing a leader block among all the blocks at each level of the blocktree. In this light, the blocks in the longest chain protocol can be viewed as serving three distinct roles: they stand for election to be leaders;  they add transactions to the main chain; they vote for ancestor blocks through parent link relationships. The latency and throughput limitations of the longest chain protocol are due to the {\em coupling} of the roles carried by the blocks. \prism removes these limitations by factorizing the blocks into three types of blocks: proposer blocks, transaction blocks and voter blocks. (Figure \ref{fig:prism}). Each block mined by a miner is randomly sortitioned into one of the three types of blocks, and if it is a voter block, it will be further  sortitioned into one of the voter trees. (Mining is described in detail in \S\ref{sec:mining}).
 
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{figures/Prism_main.pdf}
+\end{center}
+    \caption[Prism factors the blocks into three types of blocks.]{\prism: Factorizing the blocks into three types of blocks: proposer blocks, transaction blocks and voter blocks.}
+\label{fig:prism}
+\end{figure}
+
 The proposer blocktree anchors the \prism blockchain. 
 Each proposer block contains a list of reference links to transaction blocks, which contains transactions, as well as a single reference to a parent proposer block.
 Honest nodes mine proposer blocks on the longest chain in the proposer tree, but the longest chain does not determine the final confirmed sequence of proposer blocks, known as the  \emph{leader sequence}. 
@@ -35,13 +43,7 @@ The voter blocks vote for transactions indirectly by voting for proposer blocks,
 %    \label{fig:prism}
 %\end{figure}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.75\textwidth]{figures/Prism_main.pdf}
-\end{center}
-    \caption[Prism factors the blocks into three types of blocks.]{\prism: Factorizing the blocks into three types of blocks: proposer blocks, transaction blocks and voter blocks.}
-\label{fig:prism}
-\end{figure}
+
 
 %%Thus, the parent links in the original block tree have two implicit functionalities which are explicitly separated in this representation: 1) they provide a partial ordering of the proposal blocks according to their levels, and 2) they allow blocks to vote for each other. 
 % they help the voting blocks to vote for each other.

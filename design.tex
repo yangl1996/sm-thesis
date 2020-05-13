@@ -170,21 +170,7 @@ To do this, it takes content $C$ (resp. parent) in  the block, and ensures that 
 % \ma{This is perfect}
 
 
-\begin{figure}
-   \centering
-   \includegraphics[width=0.75\textwidth]{figures/ledger_generation.png}
-    \caption[Ledger formation of Prism.]{Ledger formation has three parts:  
-   (1)  confirming a leader  sequence of proposer blocks;
-   (2)  creating a list  of transactions;
-   and (3) sanitizing the transaction list for conflicts. 
-   In this figure, each transaction  block has only one transaction; suppose transactions  (c) and (d) are inconsistent (e.g., a double spend).
-   A proposer block's black reference link denotes a parent link. 
-    Blue links denote reference links; a proposer block can include reference links to transaction blocks as well as proposer blocks.}
-   %   \gw{A typo: unrefererred $\to$ unreferred? Do we need to use the word unrefererred? Referred blocks are okay in links.}
-%   Each shade of grey corresponds to an epoch. In Step 1 (line:\ref{code:txbksOrdering}), all the transaction blocks are incorporated, and in Step 2 (line:\ref{code:sanitizeLedger}), they are combined to build the ledger.
-   \label{fig:leader_ledger}
 
- \end{figure}
 
 
 \section{Ledger Formation}
@@ -207,6 +193,22 @@ To prevent this, Prism separates the process of confirming blocks and forming a 
 This is a key difference between Prism and many other blockchain protocols.
 % Since the same transaction can appear in multiple Prism transaction blocks \ma{we need to give more context about why this is a problem. it's all about having a large number of transaction blocks in flight at the same time, so it's fundamentally impossible for a miner to know that a transaction it is mining has not already been included in some other transaction block by another miner}, transaction confirmation is not necessarily the same thing as transaction block confirmation. 
 The formation of a ledger in Prism  occurs in three steps, as shown in Figure \ref{fig:leader_ledger}. 
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.75\textwidth]{figures/ledger_generation.png}
+    \caption[Ledger formation of Prism.]{Ledger formation has three parts:  
+   (1)  confirming a leader  sequence of proposer blocks;
+   (2)  creating a list  of transactions;
+   and (3) sanitizing the transaction list for conflicts. 
+   In this figure, each transaction  block has only one transaction; suppose transactions  (c) and (d) are inconsistent (e.g., a double spend).
+   A proposer block's black reference link denotes a parent link. 
+    Blue links denote reference links; a proposer block can include reference links to transaction blocks as well as proposer blocks.}
+   %   \gw{A typo: unrefererred $\to$ unreferred? Do we need to use the word unrefererred? Referred blocks are okay in links.}
+%   Each shade of grey corresponds to an epoch. In Step 1 (line:\ref{code:txbksOrdering}), all the transaction blocks are incorporated, and in Step 2 (line:\ref{code:sanitizeLedger}), they are combined to build the ledger.
+   \label{fig:leader_ledger}
+
+ \end{figure}
 
 \noindent{\bf (1) Proposer block confirmation.}
 First, we must confirm a contiguous sequence of leader proposer blocks at each level.  

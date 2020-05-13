@@ -18,13 +18,7 @@ Our implementation is based on the \textit{unspent transaction output (UTXO)} mo
 
 %We implement our client based on this transaction model.
 
-\begin{figure}
-    \centering
-    \resizebox{0.6\textwidth}{!}{\input{figures/system-diagram.tex}}
-    %\input{figures/system-diagram.tex}
-    \caption{\small Architecture of our \prism client implementation.}
-    \label{fig:system-architecture}
-\end{figure}
+
 
 The system architecture is illustrated in Figure~\ref{fig:system-architecture}. Functionally it can be divided into the following three modules:
 
@@ -34,6 +28,14 @@ The system architecture is illustrated in Figure~\ref{fig:system-architecture}. 
     \item \textit{Miner}, which assembles new blocks.
 \end{enumerate}
 %\end{CompactEnumerate}
+
+\begin{figure}
+    \centering
+    \resizebox{0.6\textwidth}{!}{\input{figures/system-diagram.tex}}
+    %\input{figures/system-diagram.tex}
+    \caption{\small Architecture of our \prism client implementation.}
+    \label{fig:system-architecture}
+\end{figure}
 
 \noindent % follow the previous paragraph
 The ultimate goal of the \prism client is to maintain up-to-date information of the blockchain and the ledger. To this end, it maintains the following four data structures:
