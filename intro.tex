@@ -31,7 +31,9 @@ In this thesis, we present the design (\S\ref{sec:design}) and  implementation (
 
 We make the following contributions:
 \begin{itemize}
-    \item We implement a Prism client in roughly 10,000 lines of {\tt Rust} code, and quantify its performance in extensive experiments on EC2. Our result validate Prism's core modeling decisions and theory by showing that it can scale both throughput and latency of the longest chain protocol (without compromising security) in a practical setting. Specifically, we propose a new algorithm to confirm transactions that is faster and more practical to implement than the one proposed in \cite{prism-theory} (see \S\ref{sec:confirmation} and Appendix~\ref{apx:confirmation}). Our code is available here~\cite{prismcode}.
+    \item We implement a Prism client in roughly 10,000 lines of {\tt Rust} code, and quantify its performance in extensive experiments on EC2. Our results validate Prism's theoretical results by showing that it can scale both throughput and latency of the longest chain protocol (without compromising security) in a practical setting. Our code is available here~\cite{prismcode}.
+    
+    \item We propose a new algorithm to confirm transactions that is faster and more practical to implement than the one proposed in the original protocol \cite{prism-theory} (see \S\ref{sec:confirmation} and Appendix~\ref{apx:confirmation}). 
     
     \item Our implementation highlights several performance optimizations, e.g., asynchronous ledger updates, and a scoreboarding technique that enables parallel transaction execution without race conditions (see ~\S\ref{sec:implementation-highlights}). We show that with these careful optimizations, it is possible to alleviate CPU performance bottlenecks and provide linear CPU scaling up to at least 8 cores. At this point, the primary bottleneck for our implementation is the underlying database (RocksDB~\cite{rocksdb} and I/O to the SSD persistent storage). This suggests that future research on databases optimized for blockchain-specific access patterns could further improve performance. 
     
