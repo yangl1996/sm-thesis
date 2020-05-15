@@ -283,7 +283,7 @@ Hence, we can confirm the leader block when: (1) a plurality of voter trees have
 
 Our confirmation procedure calculates this probability by computing a $(1-\epsilon)$-confidence interval over the number of votes on each leader block, as well as a hypothetical ``private'' block that has not yet been released by a hypothetical adversary that controls a fraction $\beta$ of the hash power. 
 Once the leader block's confidence interval is strictly larger than any of the other candidates' confidence intervals, we can be sure (with probability at least $1-\epsilon$) that the current leader will remain the leader for all time, so we confirm that proposer block. 
-The details of this confidence interval calculation are included in Appendix~\ref{apx:confirmation}.
+The details of this confidence interval calculation as well as a brief comparison with the confirmation rule proposed in the original protocol \cite{prism-theory} are included in Appendix~\ref{apx:confirmation}.
 
 \section{Spam Mitigation}
 \label{sec:spamming-design}
